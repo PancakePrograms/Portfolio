@@ -1,0 +1,108 @@
+body {
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgb(81, 1, 36) 0%, rgb(57, 1, 21) 47%, rgb(0, 0, 0) 100%) ;
+    font-family: sans-serif; 
+}
+#name {
+    @media screen and (max-width: 480px) {
+        margin-top: 80%;
+        font-size: 7vh; 
+    }
+    color: white; 
+    margin-top: 20%; 
+    font-size: 7vh;
+    display: block; 
+    margin-left: 10%; 
+}
+.title {
+    @media screen and (max-width: 480px) {
+        margin-bottom: 80%;
+    }
+    color: white; 
+    font-size: 3vh; 
+    display: block;
+    margin-left: 10%; 
+    margin-bottom: 30%; 
+}
+.Trans {
+    color: white;
+    font-size: 2vh; 
+    margin-left: 10%; 
+}
+.bar {
+    @media screen and (max-width: 480px) {
+        margin-top: 40%;
+        margin-bottom: 40%; 
+    }
+    width: 0;
+    margin-bottom: 20%; 
+    background-color: rgb(253, 7, 118);
+    height: 1px; 
+    margin-top: 20%;  
+    display: block; 
+    margin-left: auto;
+    margin-right: auto; 
+    
+}
+.bar-animation {
+    width: 80%; 
+    transition: width .5s ease-in-out; 
+}
+#Certs label{
+    color: white; 
+    font-size: 4vh; 
+    display: block;
+    margin-left: 20%;
+}
+#Certs img {
+    display: block; 
+    margin-top: 10%; 
+    margin-left: 10%;
+    width: 40%;
+    transition: width 0.2s ease;
+    max-width: 500px; 
+}
+#Certs img:hover {
+    width: 70%; 
+    transition: width 0.2s ease;
+    max-width: 800px; 
+}
+#Certs span {
+    color: white; 
+    display: flex; 
+    font-size: 2vh; 
+    margin-left: 10%; 
+    margin-top: 5px; 
+}
+#about {
+    @media screen and (max-width: 480px){
+        font-size: 4vh;
+    }
+    color: white; 
+    font-size: 5vh; 
+    display: flex;
+    justify-content: center; 
+    text-decoration: underline;  
+}
+#info {
+    @media screen and (max-width: 480px) {
+        font-size: 2vh;
+        padding: 0;
+    }
+    color: white; 
+    font-size: 3vh; 
+    padding: 50px; 
+    display: flex; 
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%; 
+}
+.hidden {
+    opacity: 0; 
+    transition: all 1s; 
+
+}
+
+.show {
+    opacity: 1; 
+}
