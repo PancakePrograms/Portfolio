@@ -23,19 +23,42 @@ background: linear-gradient(90deg, rgb(81, 1, 36) 0%, rgb(57, 1, 21) 47%, rgb(0,
     margin-left: 10%; 
 }
 .bar {
-    width: 1%;
+    width: 0;
     margin-bottom: 20%; 
     background-color: rgb(253, 7, 118);
     height: 1px; 
     margin-top: 20%;  
     display: block; 
     margin-left: auto;
-    margin-right: auto; 
-    
+    margin-right: auto;
+    animation: bar linear both;
+    animation-timeline: view();
+    animation-range: entry 50% cover 50%; 
 }
-.bar-animation {
-    width: 80%; 
-    transition: width .5s ease-in-out; 
+@keyframes bar {
+  0% {
+    width: 0;
+    opacity: -1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 80%;
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+span, img, label {
+  animation: fade both;
+  animation-timeline: view();
+  animation-range: entry 50% cover 50%;
 }
 #Certs label{
     color: white; 
@@ -79,15 +102,7 @@ background: linear-gradient(90deg, rgb(81, 1, 36) 0%, rgb(57, 1, 21) 47%, rgb(0,
     margin-left: 10%;
     margin-right: 10%; 
 }
-.hidden {
-    opacity: .1; 
-    transition: all 1s; 
 
-}
-
-.show {
-    opacity: 1; 
-}
 @media screen and (max-width: 600px) {
     #name {
         font-size: 7vh;
