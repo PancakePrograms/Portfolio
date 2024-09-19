@@ -23,7 +23,7 @@ background: linear-gradient(90deg, rgb(81, 1, 36) 0%, rgb(57, 1, 21) 47%, rgb(0,
     margin-left: 10%; 
 }
 .bar {
-    width: 0;
+    width: 1%;
     margin-bottom: 20%; 
     background-color: rgb(253, 7, 118);
     height: 1px; 
@@ -80,7 +80,7 @@ background: linear-gradient(90deg, rgb(81, 1, 36) 0%, rgb(57, 1, 21) 47%, rgb(0,
     margin-right: 10%; 
 }
 .hidden {
-    opacity: 0; 
+    opacity: .1; 
     transition: all 1s; 
 
 }
