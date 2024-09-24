@@ -1,17 +1,15 @@
 const form = document.getElementById('form');
 const first = form.elements['first'];
 const last = form.elements['last'];
-const result = form.elements['result'];
+const resultsDiv = document.getElementById('result');
 
-function checkResult(event) {
-    event.preventDefault();
-    const firstResult = first.value;
+function check() {
+    const firstResult = first.value; 
     const lastResult = last.value;
-    //for some reason this result.value is only showing first
-    //for later, fix the + lastResult;
-    result.value = firstResult +  lastResult;
+    resultsDiv.innerHTML += '<tr>' + '<td>' + firstResult + '</td>' + '<td>' + lastResult + '</td>' + '</tr>';
+// Add Age. Turn form into a popup window. Add a delete option for new objects.
+    first.value = "";
+    last.value = "";
 }
 
 form.addEventListener('submit', checkResult);
-
-checkResult();

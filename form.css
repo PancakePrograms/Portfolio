@@ -1,0 +1,12 @@
+table {
+    background-color: black;
+    margin: 20px;  
+}
+th {
+    background-color: rgb(182, 180, 180);
+    padding: 5px; 
+}
+td {
+    background-color: white;
+    padding: 5px; 
+}
