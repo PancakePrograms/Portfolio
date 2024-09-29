@@ -9,15 +9,15 @@ function check() {
     const firstResult = first.value; 
     const lastResult = last.value;
     const numResult = num.value;
-    resultsDiv.innerHTML += '<tr>' + '<td>' + firstResult + '</td>' + '<td>' + lastResult + '</td>' + '<td>' + numResult + '</td>' + '</tr>'
+    resultsDiv.innerHTML += '<tr>' + '<td>' + firstResult + '</td>' + '<td>' + lastResult + '</td>' + '<td>' + numResult + "<button class = 'button'>Hello</button>" + '</td>' + '</tr>'
     //add a remove entry button. (floating outside the table but inline with the entry it will remove if clicked)
     first.value = "";
     last.value = "";
     num.value = "";
-}
+    
 
-form.addEventListener('submit', checkResult);
-function deleteRow(btn) {
-    const row = btn.parentNode.parentNode;
-    row.parentNode.removeChild(row);
+    if (firstResult === "") {
+        alert('First name is required');
+        return false;
+    }
 }

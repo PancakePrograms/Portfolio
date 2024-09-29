@@ -1,6 +1,9 @@
 table {
     background-color: black;
-    margin: 20px;  
+    margin: auto; 
+    margin-top: 10px;  
+    align-items: center;
+    justify-content: center;
 }
 th {
     background-color: rgb(182, 180, 180);
@@ -9,4 +12,8 @@ th {
 td {
     background-color: white;
     padding: 5px; 
+}
+.button {
+    position: absolute;
+    right: 5px;
 }
