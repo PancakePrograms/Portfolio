@@ -9,23 +9,22 @@ function check() {
     const firstResult = first.value; 
     const lastResult = last.value;
     const numResult = num.value;
+
+    if (firstResult === "" || lastResult === "" || numResult === "") {
+        alert("Please fill out all of the required fields");
+        return false; //this does work and makes it return false
+    }
+
+    form.addEventListener('submit', function(event) {
+    if (!check()) {
+        event.preventDefault();
+    }
+});
+
     resultsDiv.innerHTML += '<tr>' + '<td>' + firstResult + '</td>' + '<td>' + lastResult + '</td>' + '<td>' + numResult + "<button class = '<button'>Hello</button>" + '</td>' + '</tr>'
 
     first.value = "";
     last.value = "";
-    num.value = "";
-    
+    num.value = "";   
+};
 
-    if (firstResult === "") {
-        alert("First name is required");
-        return false; //this does work and makes it return false
-    }
-}
-
-form.addEventListener('submit', function(event) {
-    if (!check()) {
-        event.preventDefault();
-    }
-}); //for some reason this still lets the form entry pass through
-
-//add a remove function for the button
