@@ -35,10 +35,22 @@ rowIdCounter++;
 
     first.value = "";
     last.value = "";
-    num.value = "";   
+    num.value = ""; 
+    
+    if (form.style.visibility == 'visible') {
+        form.style.visibility = "hidden";
+    }
 };
 
 function deleteRow(rowId) {
     const row = document.getElementById(rowId);
     row.parentNode.removeChild(row);
 }
+
+function add() {
+    form.style.visibility = "visible";
+}
+
+function close() {
+    form.style.visibility = "hidden";
+ };

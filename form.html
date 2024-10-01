@@ -3,20 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Patient sheet</title>
     <link rel="stylesheet" href="form.css">
 </head>
 <body>
     
+  <div class = 'topBar'>
+    <h1 class="title">Medical business name</h1>
+    <input type="text" placeholder="Search">
+    <button onclick="add()">Add new</button>
+  </div>
 
     
    <form id="form">
+    <button class='close' onclick = close()>X</button>
     <input name="first" id="first" placeholder="First name">
     <input name="last" id="last" placeholder="Last name">
     <input type="number" id="num" placeholder="age">
     <input type="submit" onclick='check(); return false;'>
     <br/>
-
+    </form>
     <table id="result">
       <thead>
         <tr>
@@ -30,7 +36,6 @@
         
       </tbody>
     </table>
-   </form>
 
    <script src = 'form.js'></script>
 </body>
