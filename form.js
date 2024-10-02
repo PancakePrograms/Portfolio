@@ -3,8 +3,11 @@ const first = form.elements['first'];
 const last = form.elements['last'];
 const num = form.elements['num'];
 const resultsDiv = document.getElementById('result');
+const submit = document.getElementById('submit');
 
 let rowIdCounter = 0;
+
+const data = [];
 
 function check() {
     const firstResult = first.value; 
@@ -16,14 +19,21 @@ function check() {
         return false; //this does work and makes it return false
     }
 
-    form.addEventListener('submit', function(event) {
-    if (!check()) {
-        event.preventDefault();
-    }
-});
-
+    submit.addEventListener('submit', function(event) {
+        if (!check()) {
+            event.preventDefault();
+        }
+    });
+    
 const rowId = `row-${rowIdCounter}`;
 rowIdCounter++;
+
+    data.push({
+        value: `${firstResult} ${lastResult} ${numResult}`
+        first: firstResult,
+        last: lastResult,
+        num: numResult,
+    });
 
     resultsDiv.innerHTML += `
     <tr id="${rowId}">
@@ -33,13 +43,14 @@ rowIdCounter++;
     </tr>
     `;
 
+    if (form.style.visibility === 'visible' || form.style.visibility === '') {
+        form.style.visibility = "hidden";
+    }
+
     first.value = "";
     last.value = "";
     num.value = ""; 
     
-    if (form.style.visibility == 'visible') {
-        form.style.visibility = "hidden";
-    }
 };
 
 function deleteRow(rowId) {
@@ -50,7 +61,26 @@ function deleteRow(rowId) {
 function add() {
     form.style.visibility = "visible";
 }
-
-function close() {
+function handleClose(event) {
+    event.preventDefault();
     form.style.visibility = "hidden";
- };
+}
+
+const searchInput = document.getElementById('searchInput');
+const autocompleteList = document.getElementById('autocompleteList');
+
+searchInput.addEventListener('input', () => {
+    // Clear the autocomplete list
+    autocompleteList.innerHTML = '';
+  
+    // Filter the data based on the search value
+    const searchValue = searchInput.value.toLowerCase();
+    const filteredData = data.filter(item => item.value.toLowerCase().startsWith(searchValue));
+  
+    // Populate the autocomplete list with the filtered data
+    filteredData.forEach(item => {
+      const listItem = document.createElement('li');
+      listItem.textContent = item;
+      autocompleteList.appendChild(listItem);
+    });
+  });
