@@ -81,7 +81,7 @@ td {
 .search {
     max-width: 300px;
     width: 30%; 
-    display: block; 
+    display: inline-block; 
 }
 .autocomplete-list {
     position: absolute;
@@ -90,6 +90,7 @@ td {
     padding: 5px;
     list-style-type: none;
     width: 100%;
+    visibility: hidden; 
   }
 
   .autocomplete-list li {

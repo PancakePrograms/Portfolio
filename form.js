@@ -9,6 +9,8 @@ let rowIdCounter = 0;
 
 const data = [];
 
+
+
 function check() {
     const firstResult = first.value; 
     const lastResult = last.value;
@@ -19,20 +21,19 @@ function check() {
         return false; //this does work and makes it return false
     }
 
-    submit.addEventListener('submit', function(event) {
+    form.addEventListener('submit', function(event) {
         if (!check()) {
             event.preventDefault();
         }
     });
+        
+    
     
 const rowId = `row-${rowIdCounter}`;
 rowIdCounter++;
 
     data.push({
         value: `${firstResult} ${lastResult} ${numResult}`
-        first: firstResult,
-        last: lastResult,
-        num: numResult,
     });
 
     resultsDiv.innerHTML += `
@@ -61,9 +62,12 @@ function deleteRow(rowId) {
 function add() {
     form.style.visibility = "visible";
 }
+
 function handleClose(event) {
     event.preventDefault();
     form.style.visibility = "hidden";
+    searchInput.value = "";
+    autocompleteList.innerHTML = "";
 }
 
 const searchInput = document.getElementById('searchInput');
@@ -72,6 +76,7 @@ const autocompleteList = document.getElementById('autocompleteList');
 searchInput.addEventListener('input', () => {
     // Clear the autocomplete list
     autocompleteList.innerHTML = '';
+    autocompleteList.style.visibility = 'visible';
   
     // Filter the data based on the search value
     const searchValue = searchInput.value.toLowerCase();
@@ -80,7 +85,15 @@ searchInput.addEventListener('input', () => {
     // Populate the autocomplete list with the filtered data
     filteredData.forEach(item => {
       const listItem = document.createElement('li');
-      listItem.textContent = item;
+      listItem.textContent = item.value;
       autocompleteList.appendChild(listItem);
+
+      
+      document.addEventListener('click', function(event) {
+        if (event.autocompleteList !== autocompleteList) {
+
+            autocompleteList.style.visibility = 'hidden';
+        }
+      })
     });
   });
