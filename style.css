@@ -33,7 +33,7 @@ background: linear-gradient(90deg, rgb(81, 1, 36) 0%, rgb(57, 1, 21) 47%, rgb(0,
     margin-right: auto;
     animation: bar linear both;
     animation-timeline: view();
-    animation-range: entry 50% cover 50%; 
+    animation-range: entry 20% cover 10%; 
 }
 @keyframes bar {
   0% {
@@ -50,15 +50,17 @@ background: linear-gradient(90deg, rgb(81, 1, 36) 0%, rgb(57, 1, 21) 47%, rgb(0,
 @keyframes fade {
   0% {
     opacity: 0;
+    transform: translateY(0);
   }
   100% {
     opacity: 1;
+    transform: translateY(-20px);
   }
 }
 span, img, label {
   animation: fade both;
   animation-timeline: view();
-  animation-range: entry 50% cover 50%;
+  animation-range: entry 20% cover 30%;
 }
 #Certs label{
     color: white; 
@@ -109,7 +111,8 @@ span, img, label {
         margin-top: 80%; 
     }
     .title {
-        margin-bottom: 80%;
+        margin-bottom: 100%;
+        margin-top: 20px;
     }
     .bar {
         margin-top: 40%;
