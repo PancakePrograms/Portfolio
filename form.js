@@ -28,7 +28,7 @@ function check() {
     });
         
     
-    
+    //this pushes the data from the form into the table
 const rowId = `row-${rowIdCounter}`;
 rowIdCounter++;
 
@@ -40,29 +40,51 @@ rowIdCounter++;
     <tr id="${rowId}">
         <td>${firstResult}</td>
         <td>${lastResult}</td>
-        <td>${numResult} <button class="Delete" onclick="deleteRow('${rowId}')">Delete</button></td>
+        <td>${numResult}
     </tr>
     `;
 
     if (form.style.visibility === 'visible' || form.style.visibility === '') {
         form.style.visibility = "hidden";
     }
-
+//this resets the form inputs to nothing to get ready for your next entry
     first.value = "";
     last.value = "";
     num.value = ""; 
+
+//this adds an onclick div for each of your form entries
+    document.querySelectorAll('#result tbody tr').forEach(row => {
+        row.addEventListener('click', () => {
+            const firstName = row.querySelector('td:nth-child(1)').textContent;
+            const lastName = row.querySelector('td:nth-child(2)').textContent;
+            const age = row.querySelector('td:nth-child(3)').textContent;
+    
+            const entryDiv = document.createElement('div');
+            entryDiv.classList.add('entry-div');
+            entryDiv.innerHTML = `<h2>${firstName} ${lastName}</h2>
+            <p>Age: ${age}</p>
+            <button class='button'>Delete</button>
+            `;
+    
+            document.body.appendChild(entryDiv);
+        });
+    });
     
 };
 
+//this deletes the entry
 function deleteRow(rowId) {
     const row = document.getElementById(rowId);
     row.parentNode.removeChild(row);
 }
 
+//this makes the form visible
 function add() {
     form.style.visibility = "visible";
 }
 
+
+//this makes the form dissapear
 function handleClose(event) {
     event.preventDefault();
     form.style.visibility = "hidden";
@@ -70,6 +92,7 @@ function handleClose(event) {
     autocompleteList.innerHTML = "";
 }
 
+//this is our search bar
 const searchInput = document.getElementById('searchInput');
 const autocompleteList = document.getElementById('autocompleteList');
 
@@ -97,3 +120,4 @@ searchInput.addEventListener('input', () => {
       })
     });
   });
+

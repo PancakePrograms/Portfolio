@@ -100,3 +100,20 @@ td {
   .autocomplete-list li:hover {
     background-color: #f1f1f1;
   }
+  .entry-div {
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px; 
+    box-shadow: 0 0 10px;
+    z-index: 999;
+  }
+  .entry-div h2 {
+    margin-top: 0;
+  }
+  .entry-div p {
+    margin-bottom: 0;
+  }
