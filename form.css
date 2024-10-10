@@ -40,7 +40,7 @@ td {
 #form {
     display: flex;
     flex-direction: column;  
-    width: 30%; 
+    width: 50%; 
     border: 1px solid black; 
     padding: 10px;
     position: fixed;  
@@ -77,6 +77,10 @@ td {
     display: flex; 
     justify-content: center; 
     align-items: center;
+}
+#submit {
+    background-color: #94D5FF;
+    border-radius: 25px;
 }
 .search {
     max-width: 300px;
@@ -116,4 +120,11 @@ td {
   }
   .entry-div p {
     margin-bottom: 0;
+  }
+  .button {
+    background-color: #479CD3;
+    width: 60%;
+    border: 1px solid black;
+    border-radius: 25%;
+    padding: 2px;
   }

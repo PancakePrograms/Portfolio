@@ -63,7 +63,7 @@ rowIdCounter++;
             entryDiv.classList.add('entry-div');
             entryDiv.innerHTML = `<h2>${firstName} ${lastName}</h2>
             <p>Age: ${age}</p>
-            <button class='button'>Delete</button>
+            <button class='button onclick='deleteRow()'>Delete</button>
             `;
     
             document.body.appendChild(entryDiv);
@@ -73,9 +73,10 @@ rowIdCounter++;
 };
 
 //this deletes the entry
-function deleteRow(rowId) {
-    const row = document.getElementById(rowId);
-    row.parentNode.removeChild(row);
+function deleteRow() {
+    document.querySelectorAll('#result tbody td').forEach(row  => {
+     row.innerHTML = ''
+    })
 }
 
 //this makes the form visible
