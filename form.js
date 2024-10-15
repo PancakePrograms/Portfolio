@@ -77,7 +77,7 @@ function deleteRow() {
     document.querySelectorAll('#result tbody td').forEach(row  => {
      row.innerHTML = ''
     })
-}
+}''
 
 //this makes the form visible
 function add() {

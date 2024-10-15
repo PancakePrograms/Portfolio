@@ -128,3 +128,10 @@ td {
     border-radius: 25%;
     padding: 2px;
   }
+  .popup_Entry {
+    background-color: #42445A;
+    min-width: 200px;
+  }
+  .hidden {
+    display: none;
+  }
