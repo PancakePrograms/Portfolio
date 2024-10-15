@@ -1,32 +1,31 @@
 body {
-    background-color: white;
-    overflow: hidden;
+    background-color: rgb(146, 146, 146);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
 }
 .game {
-  width: 300px;
-  height: 300px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
+  border: 2px solid black;
   border-radius: 10px;
+  background-color: white;
+  height: auto;
+  width: auto; 
+  min-width: 300px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 .climate {
-  position: absolute;
-  bottom: 50px;
   width:250px;
   border: 2px solid black;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 #stats {
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
     color: black;
     border: 2px solid black;
     width: 50%;
@@ -36,25 +35,23 @@ body {
     box-shadow: 3px 3px 0 black;
 }
 .actions {
-    position: absolute;
-    bottom: 0;
     width: 100%;
-    height: 30px;
+    height: 50px;
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 .actions button {
-  margin-top: 100px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding: 10px;
-  background-color: #2C2C2C;
+  padding: 8px;
+  background-color: #434141;
   color: white;
   border: 0;
-  border-radius: 2px;
+  border-radius: 20px;
   font-size: 16px;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.actions button:hover {
+    background-color: rgb(137, 137, 137);
 }
