@@ -7,10 +7,8 @@ let life = 1;
 
 const updateStats = () => {
   stats.innerHTML = `
-    Happiness: ${happiness}<br>
-    Hunger: ${hunger}<br>
-    Bathroom: ${bathroom}<br>
-    Cleanliness: ${cleanliness}
+    Happiness: ${happiness}%<br>
+    Hunger: ${hunger}%
   `;
 };
 
@@ -65,5 +63,32 @@ setInterval(() => {
   happiness -= 12;
   updateStats();
 }, halfDay);
+
+function cycle() {
+const food = document.querySelector('.feed');
+const clean = document.querySelector('.clean');
+const play = document.querySelector('.play');
+const meds = document.querySelector('.meds');
+
+  if (food.style.visibility === 'hidden' || food.style.visibility === '') {
+   
+    food.style.visibility = 'visible';
+    clean.style.visibility = 'hidden';
+    play.style.visibility = 'hidden';
+    meds.style.visibility = 'hidden';
+    return;
+}
+if (food.style.visibility === 'visible') {
+  food.style.visibility = 'hidden';
+  play.style.visibility = 'visible';
+  return;
+}
+if (play.style.visibility === 'visible' && food.style.visibility === hidden ) {
+  food.style.visibility = 'hidden';
+  play.style.visibility = 'hidden';
+  clean.style.visibility = 'visible';
+  return
+}
+}
 
 updateStats();
