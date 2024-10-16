@@ -22,8 +22,8 @@ body {
 .climate {
   width:250px;
   border: 2px solid black;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 #stats {
     color: black;
@@ -43,15 +43,20 @@ body {
 }
 .actions button {
   padding: 8px;
-  background-color: #434141;
-  color: white;
-  border: 0;
+  width: 40px;
+  border: 1px solid black;
   border-radius: 20px;
-  font-size: 16px;
+  font-size: 20px;
   text-align: center;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
-.actions button:hover {
-    background-color: rgb(137, 137, 137);
+.cycle {
+  background-color: #46A6FF;
+}
+.select {
+  background-color: #FFDD0D;
+}
+.cancel {
+  background-color: #C23D3D;
 }
