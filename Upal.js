@@ -3,7 +3,13 @@ let hunger = 75;
 let bathroom = 30;
 let cleanliness = 60;
 const stats = document.getElementById('stats');
-const poop = document.querySelector('.poop')
+const poop = document.querySelector('.poop');
+let minutes = 0;
+let hours = 1
+const minuteBar = document.getElementById('minutes');
+const hourBar = document.getElementById('hours');
+const pm = document.getElementById('pm');
+const am = document.getElementById('am');
 let life = 1;
 
 const updateStats = () => {
@@ -12,6 +18,18 @@ const updateStats = () => {
     Hunger: ${hunger}%
   `;
 };
+
+const updateTime = () => {
+  minuteBar.innerHTML = `${minutes}`
+  hourBar.innerHTML = `${hours}`
+
+  if (minutes < 10) {
+    minuteBar.innerHTML = `0${minutes}`;
+  }
+  if (hours < 10) {
+    hourBar.innerHTML = `0${hours}`;
+  }
+}
 
 const food = () => {
   hunger += 30;
@@ -82,5 +100,29 @@ setInterval(() => {
   updateStats();
 }, hour);
 
+const clockInterval = setInterval(() => {
+  minutes += 1;
+
+  if (minutes === 60) {
+    minutes = 0;
+    hours += 1;
+    if(hours === 12) {
+      hours = 1;
+      if (am.style.display === 'inline-block') {
+        am.style.display = 'none';
+        pm.style.display = 'inline-block';
+      } else {
+        am.style.display = 'inline-block';
+        pm.style.display = 'none';
+      }
+    }
+  }
+
+  updateTime();
+}, 6000);
+
+minuteBar.addEventListener('click', function(e) {
+  
+})
 
 updateStats();

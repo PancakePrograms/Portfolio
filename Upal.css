@@ -21,6 +21,7 @@ body {
   align-items: center;
   background-color: white;
   box-shadow: 2px 2px 3px #766767;
+  z-index: 0;
 }
 .screen {
   border: 2px solid black;
@@ -97,4 +98,41 @@ body {
   font-size: 16px;
   position: relative;
   top: 120px;
+}
+#clock {
+  background-color: rgb(51, 51, 51);
+  width: auto;
+  padding: 10px;
+  position: relative;
+  bottom: 20px;
+  border-radius: 10px;
+}
+#clock span {
+  color: white; 
+}
+#hours {
+  border: 0;
+  width: 15px;
+  color: white;
+  background-color: rgb(51, 51, 51);
+}
+#minutes {
+  border: 0;
+  width: 15px;
+  color: white;
+  background-color: rgb(51, 51, 51);
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} 
+#am {
+  display: none;
+}
+ #pm {
+  display: inline-block;
+}
+#popup {
+  z-index: 1;
+  position: fixed;
 }
