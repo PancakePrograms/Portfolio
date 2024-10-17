@@ -106,23 +106,30 @@ const clockInterval = setInterval(() => {
   if (minutes === 60) {
     minutes = 0;
     hours += 1;
-    if(hours === 12) {
+    
+    if(hours === 13) {
       hours = 1;
-      if (am.style.display === 'inline-block') {
-        am.style.display = 'none';
-        pm.style.display = 'inline-block';
-      } else {
-        am.style.display = 'inline-block';
-        pm.style.display = 'none';
-      }
     }
+    if ((hours === 12 && pm.style.display === "inline-block") || (hours === 12 && pm.style.display === "")) {
+      
+        am.style.display = "inline-block";
+        pm.style.display = "none"
+        return false;
+      }
+      if ((hours === 12 && am.style.display === "inline-block") || (hours === 12 && am.style.display === "")) {
+      
+        pm.style.display = "inline-block";
+        am.style.display = "none"
+        return false;
+      }
+  }
+
+  function submit() {
+    //needs to be built
   }
 
   updateTime();
-}, 6000);
+}, 60000);
 
-minuteBar.addEventListener('click', function(e) {
-  
-})
 
 updateStats();
