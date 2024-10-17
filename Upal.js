@@ -3,6 +3,7 @@ let hunger = 75;
 let bathroom = 30;
 let cleanliness = 60;
 const stats = document.getElementById('stats');
+const poop = document.querySelector('.poop')
 let life = 1;
 
 const updateStats = () => {
@@ -26,7 +27,21 @@ const food = () => {
 
     if (bathroom < 1) {
       bathroom += 30;
+      poop.style.visibility = "visible"
       clearInterval(poopInterval);
+    }
+    
+    if(poop.style.visibility === 'visible') {
+      const sick = setInterval(() =>{
+        cleanliness -= 20;
+        console.log(cleanliness)
+        
+        if(cleanliness < 1) {
+          clearInterval(sick)
+          cleanliness = 60;
+          return;
+        }
+      }, hour);
     }
 
     updateStats();
@@ -37,58 +52,35 @@ const food = () => {
 
 const clean = () => {
   cleanliness += 75;
+  poop.style.visibility = "hidden";
   cleanliness = Math.min(cleanliness, 100);
   updateStats();
 };
 
 const fullDay = 24 * 60 * 60 * 1000;
-const halfDay = 1 * 60 * 60 * 1000;
+const hour = 1 * 60 * 60 * 1000;
 
 setInterval(() => {
   hunger -= 8;
-  cleanliness -= 4;
 
-  if (hunger < 0 || cleanliness < 0) {
+  if (hunger < 0) {
     life = 0;
   }
 
   if (life === 0) {
-    stats.innerHTML = 'dead';
+    console.log('dead')
+    hunger+=75
+    life+=1
+    return;
   }
 
   updateStats();
-}, halfDay);
+}, hour);
 
 setInterval(() => {
   happiness -= 12;
   updateStats();
-}, halfDay);
+}, hour);
 
-function cycle() {
-const food = document.querySelector('.feed');
-const clean = document.querySelector('.clean');
-const play = document.querySelector('.play');
-const meds = document.querySelector('.meds');
-
-  if (food.style.visibility === 'hidden' || food.style.visibility === '') {
-   
-    food.style.visibility = 'visible';
-    clean.style.visibility = 'hidden';
-    play.style.visibility = 'hidden';
-    meds.style.visibility = 'hidden';
-    return;
-}
-if (food.style.visibility === 'visible') {
-  food.style.visibility = 'hidden';
-  play.style.visibility = 'visible';
-  return;
-}
-if (play.style.visibility === 'visible' && food.style.visibility === hidden ) {
-  food.style.visibility = 'hidden';
-  play.style.visibility = 'hidden';
-  clean.style.visibility = 'visible';
-  return
-}
-}
 
 updateStats();
