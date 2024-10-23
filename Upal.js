@@ -10,6 +10,10 @@ const minuteBar = document.getElementById('minutes');
 const hourBar = document.getElementById('hours');
 const pm = document.getElementById('pm');
 const am = document.getElementById('am');
+const clock = document.getElementById('clock');
+const popup = document.getElementById('popup');
+let minVal = document.getElementById('minVal');
+let hourVal = document.getElementById('hourVal');
 let life = 1;
 
 const updateStats = () => {
@@ -106,30 +110,50 @@ const clockInterval = setInterval(() => {
   if (minutes === 60) {
     minutes = 0;
     hours += 1;
-    
-    if(hours === 13) {
+
+    if (hours === 13) {
       hours = 1;
     }
-    if ((hours === 12 && pm.style.display === "inline-block") || (hours === 12 && pm.style.display === "")) {
-      
-        am.style.display = "inline-block";
-        pm.style.display = "none"
-        return false;
-      }
-      if ((hours === 12 && am.style.display === "inline-block") || (hours === 12 && am.style.display === "")) {
-      
-        pm.style.display = "inline-block";
-        am.style.display = "none"
-        return false;
-      }
-  }
-  
-  function submit() {
-    let minVal = document.getElementById("")
-  }
 
-
+    if (hours === 12 && (pm.style.display === "inline-block" || am.style.display === "")) {
+      am.style.display = "inline-block";
+      pm.style.display = "none";
+    } else if (hours === 12 && pm.style.display === "none") {
+      pm.style.display = "inline-block";
+      am.style.display = "none";
+    }
+  }
   updateTime();
 }, 60000);
+
+document.addEventListener('click', function(event) {
+  if (!event.target.closest('#popup')) {
+    document.getElementById('popup').style.visibility = 'hidden';
+    if (event.target.closest('#clock')) {
+      popup.style.visibility = 'visible';
+    }
+  }
+});
+
+function submit() {
+  minutes = minVal.value;
+  hours = hourVal.value;
+
+  const pmRadio = document.querySelector('input[name="dayNight"][value="pm"]');
+  const amRadio = document.querySelector('input[name="dayNight"][value="am"]');
+
+ if(amRadio.checked) {
+   pm.style.display = "none";
+   am.style.display = "inline-block";
+ } else if (pmRadio.checked) {
+   pm.style.display = "inline-block";
+   am.style.display = "none";
+ }
+
+  popup.style.visibility = 'hidden';
+  updateTime();
+};
+
+
  
 updateStats();

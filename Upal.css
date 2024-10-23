@@ -106,6 +106,7 @@ body {
   position: relative;
   bottom: 20px;
   border-radius: 10px;
+  cursor: pointer;
 }
 #clock span {
   color: white; 
@@ -139,6 +140,8 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 150px;
+  margin: auto;
   flex-direction: column;
   background-color: #42445A;
   width: auto;

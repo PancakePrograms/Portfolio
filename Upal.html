@@ -12,7 +12,7 @@
 
     <div id="stats"></div>
 
-    <div id="clock">
+    <div id="clock" onclick="EditClock()">
         <span id="hours">01</span>
         <span>:</span>
         <span id="minutes">00</span>
@@ -37,18 +37,20 @@
     </div>
 
     <div id="popup">
+        <form>
       <label for="hours">Hours</label>
       <output>0</output>
-        <input type="range" name="hours" id="hourVal" min="0" max="12" oninput="this.previousElementSibling.value = this.value">
+        <input type="range" name="hours" id="hourVal" value ="1" min="1" max="12" oninput="this.previousElementSibling.value = this.value">
         <label>Minutes</label>
         <output>00</output>
-        <input type="range" id="minVal" min="0" max="59" oninput="this.previousElementSibling.value=this.value">
+        <input type="range" id="minVal" value="0" min="0" max="59" oninput="this.previousElementSibling.value=this.value">
         
         <div class="dayCycle">
-        <input type="radio" name="dayNight" value="am" checked>
+        <input type="radio" name="dayNight" value="am">
         <label>am</label>
         <input type="radio" name="dayNight" value="pm">
         <label>pm</label>
+        </form>
         </div>
          
         <button onclick="submit()">Submit</button>
