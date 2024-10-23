@@ -123,13 +123,13 @@ const clockInterval = setInterval(() => {
         return false;
       }
   }
-
+  
   function submit() {
-    //needs to be built
+    let minVal = document.getElementById("")
   }
+
 
   updateTime();
 }, 60000);
-
-
+ 
 updateStats();

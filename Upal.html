@@ -39,10 +39,10 @@
     <div id="popup">
       <label for="hours">Hours</label>
       <output>0</output>
-        <input type="range" name="hours" id="minVal" min="0" max="12" oninput="this.previousElementSibling.value = this.value">
+        <input type="range" name="hours" id="hourVal" min="0" max="12" oninput="this.previousElementSibling.value = this.value">
         <label>Minutes</label>
         <output>00</output>
-        <input type="range" id="hourVal" min="0" max="59" oninput="this.previousElementSibling.value=this.value">
+        <input type="range" id="minVal" min="0" max="59" oninput="this.previousElementSibling.value=this.value">
         
         <div class="dayCycle">
         <input type="radio" name="dayNight" value="am" checked>

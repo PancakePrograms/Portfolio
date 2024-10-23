@@ -112,7 +112,7 @@ searchInput.addEventListener('input', () => {
       listItem.textContent = item.value;
       autocompleteList.appendChild(listItem);
 
-      
+      //I think this is broken
       document.addEventListener('click', function(event) {
         if (event.autocompleteList !== autocompleteList) {
 

@@ -135,7 +135,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 #popup {
   z-index: 1;
   position: fixed;
-  visibility: visible;
+  visibility: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
