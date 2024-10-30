@@ -9,7 +9,7 @@ let rowIdCounter = 0;
 
 const data = [];
 
-
+console.log('hello world')
 
 function check() {
     const firstResult = first.value; 
@@ -63,21 +63,37 @@ rowIdCounter++;
             entryDiv.classList.add('entry-div');
             entryDiv.innerHTML = `<h2>${firstName} ${lastName}</h2>
             <p>Age: ${age}</p>
-            <button class='button onclick='deleteRow()'>Delete</button>
+            <button class='button onclick='deleteRow("${rowId}")'>Delete</button>
             `;
     
             document.body.appendChild(entryDiv);
         });
-    });
-    
+    });  
+    return false;
 };
 
+function closeEntryDiv(event) {
+    const entryDiv = document.querySelector('.entry-div');
+
+   if (entryDiv !== null) {
+     
+
+    if (event.target !== entryDiv) {
+        console.log('removed Div')
+        entryDiv.remove();
+    }
+    
+    };
+};
+document.addEventListener('click', closeEntryDiv);
+
 //this deletes the entry
-function deleteRow() {
-    document.querySelectorAll('#result tbody td').forEach(row  => {
-     row.innerHTML = ''
-    })
-}''
+function deleteRow(rowId) {
+    const row = document.getElementById(rowId);
+    if (row) {
+        row.parentNode.removeChild(row);
+    }
+};
 
 //this makes the form visible
 function add() {
