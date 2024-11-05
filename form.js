@@ -64,27 +64,24 @@ rowIdCounter++;
             entryDiv.innerHTML = `<h2>${firstName} ${lastName}</h2>
             <p>Age: ${age}</p>
             <button class='button onclick='deleteRow("${rowId}")'>Delete</button>
-            `;
-    
+            `; 
+
             document.body.appendChild(entryDiv);
+
         });
     });  
-    return false;
+    
 };
 
 function closeEntryDiv(event) {
     const entryDiv = document.querySelector('.entry-div');
 
-   if (entryDiv !== null) {
-     
-
-    if (event.target !== entryDiv) {
+    if (event.target === entryDiv) {
         console.log('removed Div')
         entryDiv.remove();
     }
     
     };
-};
 document.addEventListener('click', closeEntryDiv);
 
 //this deletes the entry
