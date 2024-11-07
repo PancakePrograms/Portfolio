@@ -3,17 +3,18 @@ body {
 }
 .top-bar {
     border-bottom: 1.5px solid black;
-    height: 3rem;
     max-height: 40px; 
     line-height: 40px;
     box-shadow: 0 0 3px black;
     background-color: white;
     width: 100%;
-    z-index: 0;
+    z-index: 1;
     position:fixed; 
 }
 .login {
     margin-left: 5px;
+    cursor: pointer;
+
 }
 .burger {
     display: flex;
@@ -38,5 +39,58 @@ body {
     bottom: 0;
     width: 100%;
     height: 50px;
-    background-color: rgb(254, 169, 23)
+    background-image: linear-gradient(180deg, rgb(245, 183, 14), 80%, rgb(214, 188, 127));
+} 
+
+@keyframes topX {
+    0% {
+
+    }
+    1% {
+        position: absolute;
+    }
+    100% {
+        transform: rotate(45deg);
+        position: absolute;
+    }
+}
+@keyframes middleBar {
+    0% {
+        opacity: 1;
+}
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes bottomX {
+    0% {
+
+    }
+    1% {
+        position: absolute;
+    }
+    100% {
+        transform: rotate(-45deg);
+        position: absolute;
+    }
+}
+.sideBar {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(135deg, rgb(247, 247, 247), 80%, rgb(230, 193, 123));
+    background-size: cover;
+    overflow: hidden;
+    position: fixed;
+    z-index: 0;
+    top: 40px;
+    left: -100%;
+    bottom: 50px;
+}
+@keyframes slideIn {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 0;
+    }
 }
