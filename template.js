@@ -3,29 +3,26 @@ const topBar = document.querySelector('.burger :nth-child(1)');
 const middleBar = document.querySelector('.burger :nth-child(2)');
 const bottomBar = document.querySelector('.burger :nth-child(3)');
 const sideBar = document.querySelector('.sideBar');
+const x = 'false';
+
+function open_sideBar() {
+    topBar.style.transform = 'translateY(8px) rotate(45deg)';
+    bottomBar.style.transform = 'translateY(-8px) rotate(-45deg)';
+    middleBar.style.opacity = '0';
+    sideBar.style.left = '0';
+}
+
+function close_sideBar() {
+    topBar.style.transform = 'translateY(0) rotate(0deg)';
+    bottomBar.style.transform = 'translateY(0) rotate(0deg)';
+    middleBar.style.opacity = '1';
+    sideBar.style.left = '-100%';
+}
 
 burger.addEventListener('click', () => {
-    topBar.style.animation = 'topX .5s';
-    middleBar.style.animation = 'middleBar .1s linear';
-    bottomBar.style.animation = 'bottomX .5s';
-    sideBar.style.animation = 'slideIn .5s';
-   
-});
-
-topBar.addEventListener('animationend', () => {
-    topBar.style.transform = 'rotate(45deg)';
-    topBar.style.position = 'absolute';
-    
+    if(middleBar.style.opacity === '1' || middleBar.style.opacity === '') {
+    open_sideBar();
+    } else {
+        close_sideBar();
+    }
 })
-
-middleBar.addEventListener('animationend', () => {
-    middleBar.style.visibility = 'hidden';
-})
-
-bottomBar.addEventListener('animationend', () => {
-    bottomBar.style.transform = 'rotate(-45deg)';
-    bottomBar.style.position = 'absolute';
-})
-sideBar.addEventListener('animationend', () => {
-    sideBar.style.left = '0';
-});

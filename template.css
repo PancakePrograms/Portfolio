@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    overflow: hidden; 
 }
 .top-bar {
     border-bottom: 1.5px solid black;
@@ -33,46 +34,22 @@ body {
     width: 20px;
     background-color: black;
     margin: 3px;
+    transition-duration: 0.5s;
+
 }
 .bottom-bar {
     position: fixed; 
     bottom: 0;
     width: 100%;
     height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-image: linear-gradient(180deg, rgb(245, 183, 14), 80%, rgb(214, 188, 127));
 } 
-
-@keyframes topX {
-    0% {
-
-    }
-    1% {
-        position: absolute;
-    }
-    100% {
-        transform: rotate(45deg);
-        position: absolute;
-    }
-}
-@keyframes middleBar {
-    0% {
-        opacity: 1;
-}
-    100% {
-        opacity: 0;
-    }
-}
-@keyframes bottomX {
-    0% {
-
-    }
-    1% {
-        position: absolute;
-    }
-    100% {
-        transform: rotate(-45deg);
-        position: absolute;
-    }
+.bottom-bar span {
+    margin: 30px;
+    cursor: pointer;
 }
 .sideBar {
     height: 100vh;
@@ -85,12 +62,20 @@ body {
     top: 40px;
     left: -100%;
     bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    transition-duration: 0.5s;
+    box-shadow: 0 0 5px black; 
 }
-@keyframes slideIn {
-    0% {
-        left: -100%;
-    }
-    100% {
-        left: 0;
+.sideBar span {
+    margin: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: 2px solid black;
+    padding-bottom: 30px;
+}
+@media screen and (min-width: 750px) {
+    .bottom-bar span {
+        margin: 100px;
     }
 }
