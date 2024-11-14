@@ -26,3 +26,26 @@ burger.addEventListener('click', () => {
         close_sideBar();
     }
 })
+
+const login_button = document.querySelector('.top-bar :nth-child(1)');
+const login = document.querySelector('.login');
+
+function open_login() {
+    login.style.visibility = 'visible';
+}
+function close_login() {
+    login.style.visibility = 'hidden';
+}
+
+login_button.addEventListener('click', () => {
+
+    if (login.style.visibility === 'hidden' || login.style.visibility === '') {
+        open_login();
+    }
+});
+
+const close_button =document.querySelector('.close');
+
+close_button.addEventListener('click', () => {
+    close_login();
+});
