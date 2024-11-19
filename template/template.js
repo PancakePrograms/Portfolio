@@ -49,3 +49,6 @@ const close_button =document.querySelector('.close');
 close_button.addEventListener('click', () => {
     close_login();
 });
+
+
+//Log in forms

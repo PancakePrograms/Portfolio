@@ -12,62 +12,81 @@ body {
     z-index: 1;
     position:fixed; 
 }
-.top-bar span {
+.top-bar a {
     margin-left: 5px;
     cursor: pointer;
+    text-decoration: none;
+    color: black;
 }
-.login {
+.log_form {
     display: flex; 
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 60%;
-    max-width: 300px;
-    height: 60vh;
-    max-height: 150px;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 1px solid black; 
-    padding: 20px;
-    box-shadow: 1px 1px 2px black;
-    visibility: hidden;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(145deg, #ffad15 50%, rgb(195, 135, 5) 100%);
+    z-index: 0;
 }
-.login input {
-    margin: 10px;
+.log_form input {
+    margin: 20px;
     border: 1px solid black;
+    height: 26px;
+    width: 70%;
+    max-width: 300px;
+    border-radius: 30px;
+    background-color: white; 
 }
-.submit {
-    width: 50%;
-    background-color: rgb(255, 217, 50);
-    border: 1px solid black; 
-    border-radius: 5px;
-    margin-top: 8px;
-    margin-bottom: 10px;
+.log_form button {
+    width: 40%;
+    max-width: 200px;
+    height: 26px;
+    border-radius: 15px;
+    border: 2px solid white; 
+    background-color: rgb(0, 0, 0);
+    color: white; 
     cursor: pointer; 
 }
-.submit:hover {
-    background-color: rgb(255, 204, 0);
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    cursor: default;
+    margin-bottom: 50px;
 }
-.login span {
-    color: rgb(93, 93, 250);
-    font-size: 14px;
-    line-height: 20px;
+.extras {
+    position: fixed;
+    bottom: 60px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;;
+    color: hsl(0, 0%, 0%);
+    cursor: pointer; 
+    width: 100%;
 }
-.close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 12px;
-    cursor: pointer;
+.extras span:hover {
     color: white; 
-    background-color: rgb(120, 117, 117);
-    border: none;
-    border-radius: 2px;
 }
-.close:hover {
-    background-color: rgb(98, 97, 97);
+
+.back_to_home {
+    z-index: 1;
+    position: fixed;
+    top: 5px; 
+    left: 5px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 1px 1px 2px black; 
+    cursor: pointer;
+
+}
+.back_to_home:hover {
+    background-color: rgb(232, 232, 232);
 }
 .burger {
     display: flex;
