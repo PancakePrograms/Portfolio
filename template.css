@@ -1,6 +1,10 @@
 body {
     margin: 0;
-    overflow: hidden; 
+    overflow: auto; 
+    background-image: url('template-background.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+
 }
 .top-bar {
     border-bottom: 1.5px solid black;
@@ -11,6 +15,7 @@ body {
     width: 100%;
     z-index: 1;
     position:fixed; 
+    top: 0;
 }
 .top-bar a {
     margin-left: 5px;
@@ -162,8 +167,51 @@ body {
     border-bottom: 2px solid black;
     padding-bottom: 30px;
 }
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    background-color: white; 
+    color: black;
+    margin: 41px auto 51px; /* Added margin to center the content */
+}
+.content h1 {
+    background-color: black;
+    color: white; 
+    width: 80%;
+    text-align: center;
+}
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+}
+.juice {
+    height: 100px;
+    width: 100px;
+    margin: 20px;
+}
+.section-two {
+    background-color: rgb(85, 78, 78);
+    color: rgb(224, 224, 224);
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.section-two span {
+    margin: 10px;
+}
 @media screen and (min-width: 750px) {
     .bottom-bar span {
         margin: 100px;
+    }
+    .juice {
+        height: 250px;
+        width: 250px;
     }
 }
