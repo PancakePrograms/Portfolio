@@ -4,6 +4,17 @@ const middleBar = document.querySelector('.burger :nth-child(2)');
 const bottomBar = document.querySelector('.burger :nth-child(3)');
 const sideBar = document.querySelector('.sideBar');
 const x = 'false';
+const rewards = document.querySelector('.reward');
+const content = document.querySelector('.content');
+const home = document.querySelector('.Home');
+
+rewards.addEventListener('click', () => {
+    if(content.style.display === 'flex' || content.style.display === '') {
+        content.style.display = 'none';
+        home.style.color = 'black';
+        rewards.style.color = 'white';
+    };
+});
 
 function open_sideBar() {
     topBar.style.transform = 'translateY(8px) rotate(45deg)';
@@ -49,6 +60,3 @@ const close_button =document.querySelector('.close');
 close_button.addEventListener('click', () => {
     close_login();
 });
-
-
-//Log in forms
