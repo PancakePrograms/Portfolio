@@ -150,7 +150,7 @@ body {
 .sideBar {
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(135deg, rgb(247, 247, 247), 80%, rgb(230, 193, 123));
+    background-image: linear-gradient(145deg, #ffad15 40%, rgb(195, 135, 5) 70%);
     background-size: cover;
     overflow: hidden;
     position: fixed;
@@ -260,6 +260,61 @@ body {
 .Home {
     color: white; 
 }
+.rewards_section {
+  display: none;
+  background-color: white;
+  width: 80%;
+  height: auto;
+  margin: 41px auto 51px;
+  min-width: 300px;
+  max-width: 800px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.rewards_section img {
+  width: 200px;
+  border: 2px solid black;
+  margin: 5px;
+}
+.Reward_button {
+  width: 200px;
+  margin-bottom: 30px;
+  height: 30px;
+  background-color: #9F9D9A;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.reward_label {
+  font-size: 22px;
+  font-weight: bold;
+}
+#point_root {
+  font-size: 30px;
+  font-weight: bold;
+}
+.point_buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.point_buttons span {
+  font-size: 14px; 
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid black;
+  padding: 10px;
+}
+.pointB {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 2px 2px 3px black;
+  margin: 20px;
+  height: 30px;
+}
+
 @media screen and (min-width: 750px) {
     .bottom-bar span {
         margin: 100px;
