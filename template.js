@@ -10,11 +10,14 @@ const home = document.querySelector('.Home');
 const rewards_page = document.querySelector('.rewards_section')
 
 rewards.addEventListener('click', () => {
-    if(content.style.display === 'flex' || content.style.display === '') {
+    if (rewards_page.style.display == 'none' || rewards_page.style.display === '') {
+    
         content.style.display = 'none';
         home.style.color = 'black';
         rewards.style.color = 'white';
         rewards_page.style.display = 'flex';
+        shop.style.display = 'none';
+        order.style.color = 'black';
     };
 });
 home.addEventListener('click', () => {
@@ -23,8 +26,24 @@ home.addEventListener('click', () => {
   rewards_page.style.display = 'none';
   rewards.style.color = 'black';
   home.style.color = 'white';
+  shop.style.display = 'none';
+  order.style.color = 'black';
   }
 })
+const order = document.querySelector('.Order');
+const shop = document.querySelector('.order_section');
+order.addEventListener('click', () => {
+    if (shop.style.display === 'none' || shop.style.display === '') {
+        shop.style.display = 'flex';
+        order.style.color = 'white';
+        content.style.display = 'none';
+        rewards_page.style.display = 'none';
+        rewards.style.color = 'black';
+        home.style.color = 'black';
+    }
+})
+
+
 
 function open_sideBar() {
     topBar.style.transform = 'translateY(8px) rotate(45deg)';
@@ -89,3 +108,9 @@ document.getElementById('decrease').addEventListener('click', () => {
   updatePoints();
   }
 });
+
+const item = document.getElementById('.juice');
+
+item.addEventListener('click', () => {
+
+})
