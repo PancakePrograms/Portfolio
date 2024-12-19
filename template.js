@@ -64,6 +64,14 @@ function updatePoints() {
     pointVal = minPoint;
   }
 }
+redeem.addEventListener('click', () => {
+  if (pointVal >= 200) {
+    pointVal -= 200;
+    redeem.style.backgroundColor = '#9F9D9A';
+    updatePoints();
+  }
+});
+
 updatePoints();
 
 document.getElementById('increase').addEventListener('click', () => {
