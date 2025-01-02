@@ -1,1 +1,0 @@
-alert("Hello world! For legal purposes, my name is Zachary Kopenhaver. However, I am transgender and I go by Charlie and she/her pronouns.")

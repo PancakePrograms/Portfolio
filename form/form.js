@@ -4,6 +4,7 @@ const last = form.elements['last'];
 const num = form.elements['num'];
 const resultsDiv = document.getElementById('result');
 const submit = document.getElementById('submit');
+const close = document.querySelector('.close');
 
 let rowIdCounter = 0;
 
@@ -38,9 +39,9 @@ rowIdCounter++;
 
     resultsDiv.innerHTML += `
     <tr id="${rowId}">
-        <td>${firstResult}</td>
-        <td>${lastResult}</td>
-        <td>${numResult}
+        <td contenteditable>${firstResult}</td>
+        <td contenteditable>${lastResult}</td>
+        <td contenteditable>${numResult}
     </tr>
     `;
 
@@ -50,47 +51,8 @@ rowIdCounter++;
 //this resets the form inputs to nothing to get ready for your next entry
     first.value = "";
     last.value = "";
-    num.value = ""; 
-
-//this adds an onclick div for each of your form entries
-    document.querySelectorAll('#result tbody tr').forEach(row => {
-        row.addEventListener('click', () => {
-            const firstName = row.querySelector('td:nth-child(1)').textContent;
-            const lastName = row.querySelector('td:nth-child(2)').textContent;
-            const age = row.querySelector('td:nth-child(3)').textContent;
-    
-            const entryDiv = document.createElement('div');
-            entryDiv.classList.add('entry-div');
-            entryDiv.innerHTML = `<h2>${firstName} ${lastName}</h2>
-            <p>Age: ${age}</p>
-            <button class='button onclick='deleteRow("${rowId}")'>Delete</button>
-            `; 
-
-            document.body.appendChild(entryDiv);
-
-        });
-    });  
-    
-};
-
-function closeEntryDiv(event) {
-    const entryDiv = document.querySelector('.entry-div');
-
-    if (event.target === entryDiv) {
-        console.log('removed Div')
-        entryDiv.remove();
-    }
-    
-    };
-document.addEventListener('click', closeEntryDiv);
-
-//this deletes the entry
-function deleteRow(rowId) {
-    const row = document.getElementById(rowId);
-    if (row) {
-        row.parentNode.removeChild(row);
-    }
-};
+    num.value = "";  
+}
 
 //this makes the form visible
 function add() {
@@ -125,7 +87,7 @@ searchInput.addEventListener('input', () => {
       listItem.textContent = item.value;
       autocompleteList.appendChild(listItem);
 
-      //I think this is broken
+      //This makes the list disappear when the user clicks outside of the list.
       document.addEventListener('click', function(event) {
         if (event.autocompleteList !== autocompleteList) {
 
@@ -134,4 +96,21 @@ searchInput.addEventListener('input', () => {
       })
     });
   });
-
+// Add event listeners to the table cells for editing
+resultsDiv.addEventListener('input', function(event) {
+    const target = event.target;
+    if (target.tagName === 'TD') {
+      const rowIndex = target.parentElement.rowIndex;
+      const columnIndex = target.cellIndex;
+      const newValue = target.textContent;
+  
+      // Update the data array
+      if (columnIndex === 0) {
+        data[rowIndex].value = `${newValue} ${data[rowIndex].value.split(' ')[1]} ${data[rowIndex].value.split(' ')[2]}`;
+      } else if (columnIndex === 1) {
+        data[rowIndex].value = `${data[rowIndex].value.split(' ')[0]} ${newValue} ${data[rowIndex].value.split(' ')[2]}`;
+      } else if (columnIndex === 2) {
+        data[rowIndex].value = `${data[rowIndex].value.split(' ')[0]} ${data[rowIndex].value.split(' ')[1]} ${newValue}`;
+      }
+    }
+  });

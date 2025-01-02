@@ -7,15 +7,15 @@ const x = 'false';
 const rewards = document.querySelector('.reward');
 const content = document.querySelector('.content');
 const home = document.querySelector('.Home');
-const rewards_page = document.querySelector('.rewards_section')
+const rewardPage = document.querySelector('.rewards_section')
 
 rewards.addEventListener('click', () => {
-    if (rewards_page.style.display == 'none' || rewards_page.style.display === '') {
+    if (rewardPage.style.display == 'none' || rewardPage.style.display === '') {
     
         content.style.display = 'none';
         home.style.color = 'black';
         rewards.style.color = 'white';
-        rewards_page.style.display = 'flex';
+        rewardPage.style.display = 'flex';
         shop.style.display = 'none';
         order.style.color = 'black';
     };
@@ -23,7 +23,7 @@ rewards.addEventListener('click', () => {
 home.addEventListener('click', () => {
   if (content.style.display === 'none') {
   content.style.display = 'flex';
-  rewards_page.style.display = 'none';
+  rewardPage.style.display = 'none';
   rewards.style.color = 'black';
   home.style.color = 'white';
   shop.style.display = 'none';
@@ -37,7 +37,7 @@ order.addEventListener('click', () => {
         shop.style.display = 'flex';
         order.style.color = 'white';
         content.style.display = 'none';
-        rewards_page.style.display = 'none';
+        rewardPage.style.display = 'none';
         rewards.style.color = 'black';
         home.style.color = 'black';
     }
@@ -109,8 +109,3 @@ document.getElementById('decrease').addEventListener('click', () => {
   }
 });
 
-const item = document.getElementById('.juice');
-
-item.addEventListener('click', () => {
-
-})

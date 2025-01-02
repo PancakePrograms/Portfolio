@@ -3,9 +3,13 @@ body {
 background: linear-gradient(90deg, rgb(81, 1, 36) 0%, rgb(57, 1, 21) 47%, rgb(0, 0, 0) 100%) ;
     font-family: sans-serif; 
 }
+.label {
+    display: flex;
+    flex-direction: column;
+}
 #name {
     color: white; 
-    margin-top: 20%; 
+    margin-top: 40vh; 
     font-size: 7vh;
     display: block; 
     margin-left: 10%; 
@@ -13,9 +17,7 @@ background: linear-gradient(90deg, rgb(81, 1, 36) 0%, rgb(57, 1, 21) 47%, rgb(0,
 .title {
     color: white; 
     font-size: 3vh; 
-    display: block;
     margin-left: 10%; 
-    margin-bottom: 30%; 
 }
 .Trans {
     color: white;
@@ -24,10 +26,10 @@ background: linear-gradient(90deg, rgb(81, 1, 36) 0%, rgb(57, 1, 21) 47%, rgb(0,
 }
 .bar {
     width: 0;
-    margin-bottom: 20%; 
+    margin-bottom: 50vh; 
+    margin-top: 50vh; 
     background-color: rgb(253, 7, 118);
-    height: 1px; 
-    margin-top: 20%;  
+    height: 1px;  
     display: block; 
     margin-left: auto;
     margin-right: auto;
@@ -60,7 +62,7 @@ background: linear-gradient(90deg, rgb(81, 1, 36) 0%, rgb(57, 1, 21) 47%, rgb(0,
 span, img, label {
   animation: fade both;
   animation-timeline: view();
-  animation-range: entry 20% cover 30%;
+  animation-range: entry 40% cover 30%;
 }
 #Certs label{
     color: white; 
@@ -104,19 +106,71 @@ span, img, label {
     margin-left: 10%;
     margin-right: 10%; 
 }
+.Skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 2vh;
+    margin-top: 10px;
+}
+ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    color: white;
+    font-size: 18px;
+}
+ul li {
+    margin: 20px;
+}
+.bullets {
+    margin-bottom: 50px;
+}
+.examples {
+    width: 20vh;
+    color: black;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    background-color: white;
+}
+.examples:hover {
+    background-color: rgb(213, 213, 213);
+    cursor: pointer;
+}
+.unavailable {
+    width: 20vh;
+    color: rgb(203, 203, 203);
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    background-color: rgb(33, 33, 33);
+    cursor: default;
+}
+.programs span:nth-child(1) {
+    margin-bottom: 200px;
+}
+a {
+    text-decoration: none;
+}
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
     #name {
         font-size: 7vh;
-        margin-top: 80%; 
+        margin-top: 40vh; 
     }
     .title {
-        margin-bottom: 100%;
         margin-top: 20px;
     }
     .bar {
-        margin-top: 40%;
-        margin-bottom: 40%; 
+        margin-top: 40vh;
+        margin-bottom: 40vh; 
     }
     #about {
         font-size: 4vh;
@@ -124,5 +178,14 @@ span, img, label {
     #info {
         font-size: 2vh;
         padding: 0;
+    }
+    ul li {
+        margin: 10px;
+    }
+    .programs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
     }
 }
