@@ -1,0 +1,410 @@
+body {
+    margin: 0;
+    overflow: auto; 
+    background-image: url('template-background.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+
+}
+.top-bar {
+    border-bottom: 1.5px solid black;
+    max-height: 40px; 
+    line-height: 40px;
+    box-shadow: 0 0 3px black;
+    background-color: white;
+    width: 100%;
+    z-index: 1;
+    position:fixed; 
+    top: 0;
+}
+.top-bar a {
+    margin-left: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+.log_form {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(145deg, #ffad15 50%, rgb(195, 135, 5) 100%);
+    z-index: 0;
+}
+.log_form input {
+    margin: 20px;
+    border: 1px solid black;
+    height: 26px;
+    width: 70%;
+    max-width: 300px;
+    border-radius: 30px;
+    background-color: white; 
+}
+.log_form button {
+    width: 40%;
+    max-width: 200px;
+    height: 26px;
+    border-radius: 15px;
+    border: 2px solid white; 
+    background-color: rgb(0, 0, 0);
+    color: white; 
+    cursor: pointer; 
+}
+.signup_form {
+    display: none; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(145deg, #ffad15 50%, rgb(195, 135, 5) 100%);  
+}
+.signup_form input {
+    margin: 20px;
+    border: 1px solid black;
+    height: 26px;
+    width: 70%;
+    max-width: 300px;
+    border-radius: 30px;
+    background-color: white; 
+}
+.signup_form button {
+    width: 40%;
+    max-width: 200px;
+    height: 26px;
+    border-radius: 15px;
+    border: 2px solid white; 
+    background-color: rgb(0, 0, 0);
+    color: white; 
+    cursor: pointer; 
+}
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    cursor: default;
+    margin-bottom: 50px;
+}
+.extras {
+    position: absolute;
+    bottom: 60px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;;
+    color: hsl(0, 0%, 0%);
+    cursor: pointer; 
+    width: 100%;
+}
+.extras span:hover {
+    color: white; 
+}
+
+.back_to_home {
+    z-index: 1;
+    position: fixed;
+    top: 5px; 
+    left: 5px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 1px 1px 2px black; 
+    cursor: pointer;
+
+}
+.back_to_home:hover {
+    background-color: rgb(232, 232, 232);
+}
+.burger {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding-right: 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+}
+.burger div {
+    height: 2px;
+    width: 20px;
+    background-color: black;
+    margin: 3px;
+    transition-duration: 0.5s;
+
+}
+.bottom-bar {
+    position: fixed; 
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(180deg, rgb(245, 183, 14), 80%, rgb(214, 188, 127));
+} 
+.bottom-bar span {
+    margin: 30px;
+    cursor: pointer;
+}
+.bottom-bar span:hover {
+    color: white;
+}
+.sideBar {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(145deg, #ffad15 40%, rgb(195, 135, 5) 70%);
+    background-size: cover;
+    overflow: hidden;
+    position: fixed;
+    z-index: 0;
+    top: 40px;
+    left: -100%;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    transition-duration: 0.5s;
+    box-shadow: 0 0 5px black; 
+}
+.sideBar span {
+    margin: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: 2px solid black;
+    padding-bottom: 30px;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    background-color: white; 
+    color: black;
+    margin: 41px auto 51px;
+    min-width: 300px;
+    max-width: 800px;
+}
+.content h1 {
+    background-color: black;
+    color: white; 
+    width: 80%;
+    text-align: center;
+}
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+    margin-top: 20px;
+}
+.shop-grid figure {
+    margin: 0;
+}
+.shop-grid figcaption {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+.juice {
+    width: 20vw;
+    min-width: 100px;
+    max-width: 200px;
+    border: 1px solid black;
+
+}
+.section-two {
+    background-color: rgb(85, 78, 78);
+    color: rgb(224, 224, 224);
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.section-two h2 {
+    margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: bold;
+}
+.section-two span {
+    margin: 20px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.disclaimer {
+    font-size: 14px;
+    margin: 10px;
+}
+.contact a {
+    text-decoration: none;
+}
+.links img {
+    width: 40px;
+    margin: 20px;
+    cursor: pointer;
+}
+.links {
+    box-shadow: 1px 1px 3px;
+    margin-bottom: 10px;
+    margin-top: 30px; 
+}
+
+.Home {
+    color: white; 
+}
+.rewards_section {
+  display: none;
+  background-color: white;
+  width: 80%;
+  height: auto;
+  margin: 41px auto 51px;
+  min-width: 300px;
+  max-width: 800px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.rewards_section img {
+  width: 200px;
+  border: 2px solid black;
+  margin: 5px;
+}
+.Reward_button {
+  width: 200px;
+  margin-bottom: 30px;
+  height: 30px;
+  background-color: #9F9D9A;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.reward_label {
+  font-size: 22px;
+  font-weight: bold;
+}
+#point_root {
+  font-size: 30px;
+  font-weight: bold;
+}
+.point_buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.point_buttons span {
+  font-size: 14px; 
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid black;
+  padding: 10px;
+}
+.pointB {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 2px 2px 3px black;
+  margin: 20px;
+  height: 30px;
+}
+.order_section {
+    display: none;
+    background-color: white;
+    width: 80%;
+    height: auto;
+    margin: 41px auto 51px;
+    min-width: 300px;
+    max-width: 800px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.bod {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+.bod div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.description {
+    font-size: 16px;
+    margin: 20px;
+    max-width: 400px;
+    text-align: center;
+    display: flex; 
+}
+.buy_button {
+    width: 300px;
+    height: 30px;
+    background-color: orange;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-left: 20px; 
+    cursor: pointer;
+}
+.buy_juice {
+    width: 70vw;
+    max-width: 400px; 
+    border: 2px solid black;
+    margin-left: 20px; 
+    margin-top: 40px; 
+}
+.log {
+    display: none;
+}
+.create {
+    display: block;
+}
+
+@media screen and (min-width: 750px) {
+    .bottom-bar span {
+        margin: 100px;
+    }
+    .shop-grid {
+        grid-gap: 90px; 
+    }
+    .bod {
+        flex-direction: row;
+    }
+    .buy_juice {
+        height: 400px; 
+        max-width: 400px; 
+        border: 2px solid black;
+        margin-left: 20px; 
+        margin-top: 50px; 
+    }
+    .buy_button {
+        margin-top: 100px; 
+    }
+}

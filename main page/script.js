@@ -1,0 +1,1 @@
+alert("Hello world! For legal purposes, my name is Zachary Kopenhaver. However, I am transgender and I go by Charlie and she/her pronouns. Here you will see certifications under the name Charlie Mae. I am currently working on recieving those certifications a second time under my legal name.")
