@@ -1,198 +1,30 @@
 body {
-    background: rgb(2,0,36);
-background: linear-gradient(90deg, rgb(81, 1, 36) 0%, rgb(57, 1, 21) 47%, rgb(0, 0, 0) 100%) ;
-    font-family: sans-serif; 
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+}
+.head {
+    display: flex;
+    flex-direction: row;
 }
 .label {
     display: flex;
     flex-direction: column;
+    position: fixed;
+    left: 10vw;
 }
-#name {
-    color: white; 
-    margin-top: 40vh; 
-    font-size: 7vh;
-    display: block; 
-    margin-left: 10%; 
+.name {
+    font-weight: bold;
+    font-size: 24px;
 }
-.title {
-    color: white; 
-    font-size: 3vh; 
-    margin-left: 10%; 
+.nav {
+    position: fixed;
+    right: 10vw;
 }
-.Trans {
-    color: white;
-    font-size: 2vh; 
-    margin-left: 10%; 
-}
-.bar {
-    width: 0;
-    margin-bottom: 50vh; 
-    margin-top: 50vh; 
-    background-color: rgb(253, 7, 118);
-    height: 1px;  
-    display: block; 
-    margin-left: auto;
-    margin-right: auto;
-    animation: bar linear both;
-    animation-timeline: view();
-    animation-range: entry 20% cover 10%; 
-}
-@keyframes bar {
-  0% {
-    width: 0;
-    opacity: -1;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    width: 80%;
-  }
-}
-@keyframes fade {
-  0% {
-    opacity: 0;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(-20px);
-  }
-}
-span, img, label {
-  animation: fade both;
-  animation-timeline: view();
-  animation-range: entry 40% cover 30%;
-}
-#Certs label{
-    color: white; 
-    font-size: 4vh; 
-    display: block;
-    margin-left: 20%;
-}
-#Certs img {
-    display: block; 
-    margin-top: 10%; 
-    margin-left: 10%;
-    width: 40%;
-    transition: width 0.2s ease;
-    max-width: 500px; 
-}
-#Certs img:hover {
-    width: 70%; 
-    transition: width 0.2s ease;
-    max-width: 800px; 
-}
-#Certs span {
-    color: white; 
-    display: flex; 
-    font-size: 2vh; 
-    margin-left: 10%; 
-    margin-top: 5px; 
-}
-#about {
-    color: white; 
-    font-size: 5vh; 
-    display: flex;
-    justify-content: center; 
-    text-decoration: underline;  
-}
-#info {
-    color: white; 
-    font-size: 3vh;
-    line-height: 40px; 
-    padding: 50px; 
-    display: flex; 
-    text-align: center;
-    margin-left: 10%;
-    margin-right: 10%; 
-}
-.Skills {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    font-size: 2vh;
-    margin-top: 10px;
-}
-ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    color: white;
-    font-size: 18px;
-}
-ul li {
+.nav span {
     margin: 20px;
 }
-.bullets {
-    margin-bottom: 50px;
-}
-.examples {
-    width: 20vh;
-    color: black;
-    margin-top: 20px;
-    margin-left: 20px;
-    padding: 50px;
-    border: 1px solid black;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px black;
-    background-color: white;
-}
-.examples:hover {
-    background-color: rgb(213, 213, 213);
-    cursor: pointer;
-}
-.unavailable {
-    width: 20vh;
-    color: rgb(203, 203, 203);
-    margin-top: 20px;
-    margin-left: 20px;
-    padding: 50px;
-    border: 1px solid black;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px black;
-    background-color: rgb(33, 33, 33);
-    cursor: default;
-}
-.programs span:nth-child(1) {
-    margin-bottom: 200px;
-}
-a {
-    text-decoration: none;
-}
-
-@media screen and (max-width: 700px) {
-    #name {
-        font-size: 7vh;
-        margin-top: 40vh; 
-    }
-    .title {
-        margin-top: 20px;
-    }
-    .bar {
-        margin-top: 40vh;
-        margin-bottom: 40vh; 
-    }
-    #about {
-        font-size: 4vh;
-    }
-    #info {
-        font-size: 2vh;
-        padding: 0;
-        line-height: 20px;
-    }
-    ul li {
-        margin: 10px;
-    }
-}
-@media screen and (max-width: 850px) {
-    .programs {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: white;
-    }
-    .programs a {
-        margin-bottom: 150px;
-    }
+.home_body {
+    margin-top: 200px;
 }
