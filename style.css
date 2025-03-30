@@ -4,6 +4,7 @@ body {
     width: 100vw;
     background-color: rgb(255, 255, 255);
     overflow: hidden;
+    background-image: linear-gradient(to right bottom, rgb(255, 65, 65) 70%, rgb(255, 126, 126));
 }
 .head {
     display: flex;
@@ -39,9 +40,9 @@ body {
     cursor: pointer;
 }
 .home_body {
-    background-image: linear-gradient(to right bottom, rgb(255, 65, 65) 70%, rgb(255, 126, 126));
     background-size: cover;
     height: 100vh;
+    visibility: visible;
 
 }
 .home_body p {
@@ -70,5 +71,51 @@ body {
 }
 .home_body button:hover {
     background-color: rgb(38, 38, 38);
+}
+.certification_div {
+    display: none;
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.certification_div img {
+    width: 70vw;
+    max-width: 600px;
+    border: 2px solid black;
+    
+}
+.pointer {
+    font-size: 70px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px;
+}
+.slide {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.slide1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 
+}
+.slide2 {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.slide3 {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.html_label {
+    font-size: 24px;
 }
