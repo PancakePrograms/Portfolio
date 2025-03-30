@@ -4,7 +4,6 @@ body {
     width: 100vw;
     background-color: rgb(255, 255, 255);
     overflow: hidden;
-    cursor: url('Paw-print.svg.png'), default !important;
 }
 .head {
     display: flex;
