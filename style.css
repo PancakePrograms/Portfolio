@@ -1,7 +1,11 @@
 body {
+    height: 100vh;
     background-color: rgb(22, 22, 22);
     margin: 0;
-
+    background-image: radial-gradient(rgb(12, 12, 68), rgb(22, 22, 22));
+    background-repeat: no-repeat;
+    background-size: 100%;
+    overflow: hidden;
 }
 .topBar {
     display: flex;
@@ -11,7 +15,7 @@ body {
     border-radius: 15px;
     width: 85%;
     color: white;
-    position: fixed; 
+    position: relative; 
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
@@ -31,5 +35,44 @@ body {
     right: 10px;
 }
 .nav span {
-    padding-left: 10px;
+    padding-left: 1vw;
+}
+.intro {
+    margin-top: 150px;
+    width: 100vw;
+}
+.intro h1 {
+    background-image: linear-gradient(rgb(30, 30, 30), rgb(45, 143, 255));
+    color: transparent;
+    background-clip: text;
+    font-weight: bold;
+    margin-left: 20vw;
+
+}
+.description {
+    display: flex;
+    color: white;
+    margin-left: 20vw;
+    margin-right: 20vw;
+}
+.intro button {
+    display: block;
+    margin-top: 20px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color:rgb(30, 30, 30);
+    color: white;
+    height: 30px;
+    width: 120px;
+    border-image: linear-gradient(to right, rgb(71, 71, 214), rgb(101, 130, 250)) 1;
+}
+.bar {
+    height: .2px;
+    width: 95%;
+    background-color: rgb(150, 145, 145);
+    margin-top: 50px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%)
 }
