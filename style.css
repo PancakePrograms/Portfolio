@@ -1,121 +1,35 @@
 body {
+    background-color: rgb(22, 22, 22);
     margin: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: rgb(255, 255, 255);
-    overflow: hidden;
-    background-image: linear-gradient(to right bottom, rgb(255, 65, 65) 70%, rgb(255, 126, 126));
+
 }
-.head {
+.topBar {
     display: flex;
     flex-direction: row;
-    background-color: black;
-    width: 100%;
-    height: 70px;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 15px;
+    width: 85%;
     color: white;
-    margin-bottom: 0;
-}
-.label {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    left: 10vw;
+    position: fixed; 
     top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.topBar span {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .name {
-    font-weight: bold;
-    font-size: 24px;
+    font-size: 22px;
+    position: relative;
+    left: 10px;
 }
 .nav {
-    position: fixed;
-    right: 10vw;
-    top: 10px;
+    font-size: 16px;
+    position: absolute;
+    right: 10px;
 }
 .nav span {
-    margin: 20px;
-    height: 70px; 
-}
-.nav span:hover {
-    color:rgb(250, 76, 76);
-    cursor: pointer;
-}
-.home_body {
-    background-size: cover;
-    height: 100vh;
-    visibility: visible;
-
-}
-.home_body p {
-    margin-left: 15vw;
-    margin-right: 15vw;
-    margin-top: 150px;
-    font-size: 20px;
-}
-.home_body h1 {
-    margin-top: 0;
-
-    position: relative;
-    left: 30%;
-    top: 100px;
-}
-.home_body button {
-    margin-left: 50vw;
-    margin-top: 10vh;
-    width: 150px;
-    height: 50px;
-    border-radius: 10px;
-    border: none;
-    color: rgb(250, 76, 76); 
-    background-color: black;
-    box-shadow: 3px 3px 3px rgb(56, 56, 56);
-}
-.home_body button:hover {
-    background-color: rgb(38, 38, 38);
-}
-.certification_div {
-    display: none;
-    position: fixed; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.certification_div img {
-    width: 70vw;
-    max-width: 600px;
-    border: 2px solid black;
-    
-}
-.pointer {
-    font-size: 70px;
-    font-weight: bold;
-    cursor: pointer;
-    margin: 10px;
-}
-.slide {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.slide1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-
-}
-.slide2 {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.slide3 {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.html_label {
-    font-size: 24px;
+    padding-left: 10px;
 }
