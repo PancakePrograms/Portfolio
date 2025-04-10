@@ -19,10 +19,15 @@ body {
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 2;
 }
-.topBar span {
+.nav span {
     padding-top: 10px;
     padding-bottom: 10px;
+    cursor: pointer;
+}
+.nav span:nth-child(1) {
+    color: rgb(57, 227, 253);
 }
 .name {
     font-size: 22px;
@@ -37,23 +42,91 @@ body {
 .nav span {
     padding-left: 1vw;
 }
+
+.burger {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+.burger span {
+    height: 2px;
+    width: 20px;
+    background-color: white;
+    margin: 2px;
+    border-radius: 5px;
+}
+.burgerMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: -100vw;
+    background-color: rgb(26, 26, 26);
+    color: white;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    transition: 1s;
+
+}
+.burgerMenu span {
+    margin: 20px;
+    font-size: 26px;
+    font-weight: bold;
+}
+@media screen and (max-width: 600px) {
+    .nav {
+        display: none;
+    }
+    .burger {
+        display: flex;
+    }
+}
 .intro {
     margin-top: 150px;
     width: 100vw;
 }
 .intro h1 {
-    background-image: linear-gradient(rgb(30, 30, 30), rgb(45, 143, 255));
+    background-image: linear-gradient(rgb(73, 227, 238), rgb(45, 143, 255));
     color: transparent;
     background-clip: text;
     font-weight: bold;
     margin-left: 20vw;
-
+    font-size: 10vw;
+    margin-bottom: 0;
+}
+.intro h2 {
+    background-image: linear-gradient(rgb(145, 202, 250), rgb(45, 143, 255));
+    color: transparent;
+    background-clip: text;
+    font-weight: bold;
+    margin-left: 20vw;
+    font-size: 10vw;
+    margin-top: 0;
+}
+@media screen and (min-width: 800px) {
+    .intro h1 {
+        font-size: 80px;
+    }
+    .intro h2 {
+        font-size: 80px;
+    }
 }
 .description {
     display: flex;
     color: white;
     margin-left: 20vw;
     margin-right: 20vw;
+    font-size: 3vw;
+}
+@media screen and (min-width: 800px) {
+    .description {
+        font-size: 20px;
+    }
 }
 .intro button {
     display: block;
@@ -66,6 +139,11 @@ body {
     height: 30px;
     width: 120px;
     border-image: linear-gradient(to right, rgb(71, 71, 214), rgb(101, 130, 250)) 1;
+    transition: .2s;
+}
+.intro button:hover {
+    border-image: linear-gradient(to right, rgb(130, 130, 239), rgb(103, 197, 247)) 1;
+    background-color: rgb(36, 36, 36);
 }
 .bar {
     height: .2px;
