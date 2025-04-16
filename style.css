@@ -89,6 +89,7 @@ body {
 .intro {
     margin-top: 150px;
     width: 100vw;
+    
 }
 .intro h1 {
     background-image: linear-gradient(rgb(73, 227, 238), rgb(45, 143, 255));
@@ -108,14 +109,6 @@ body {
     font-size: 10vw;
     margin-top: 0;
 }
-@media screen and (min-width: 800px) {
-    .intro h1 {
-        font-size: 80px;
-    }
-    .intro h2 {
-        font-size: 80px;
-    }
-}
 .description {
     display: flex;
     color: white;
@@ -123,11 +116,7 @@ body {
     margin-right: 20vw;
     font-size: 3vw;
 }
-@media screen and (min-width: 800px) {
-    .description {
-        font-size: 20px;
-    }
-}
+
 .intro button {
     display: block;
     margin-top: 20px;
@@ -145,12 +134,24 @@ body {
     border-image: linear-gradient(to right, rgb(130, 130, 239), rgb(103, 197, 247)) 1;
     background-color: rgb(36, 36, 36);
 }
-.bar {
-    height: .2px;
-    width: 95%;
-    background-color: rgb(150, 145, 145);
-    margin-top: 50px;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%)
+
+
+@media screen and (min-width: 800px) {
+    .description {
+        font-size: 20px;
+    }
+    .intro h2 {
+        font-size: 80px;
+    }
+    .intro h1 {
+        font-size: 80px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .intro h2 {
+        margin-bottom: 50px;
+    }
+    .intro span {
+        margin-bottom: 50px;
+    }
 }
