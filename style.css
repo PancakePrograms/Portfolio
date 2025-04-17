@@ -5,7 +5,9 @@ body {
     background-image: radial-gradient(rgb(12, 12, 68), rgb(22, 22, 22));
     background-repeat: no-repeat;
     background-size: 100%;
-    overflow: hidden;
+}
+body::-webkit-scrollbar {
+    display: none;
 }
 .topBar {
     display: flex;
@@ -27,7 +29,7 @@ body {
     cursor: pointer;
 }
 .nav span:nth-child(1) {
-    color: rgb(57, 227, 253);
+    color: rgb(145, 202, 250);
 }
 .name {
     font-size: 22px;
@@ -146,11 +148,33 @@ body {
     margin-top: 10vh;
 }
 .Certifications img {
-    width: 80vw;
+    width: 0vw;
     margin: 20px;
     max-width: 600px;
+    visibility: hidden;
+    transition: .5s;
 }
-
+.certLabels {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.html, .css, .JS {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.html span, .css span, .JS span {
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+.language {
+    font-size: 24px;
+}
 @media screen and (min-width: 800px) {
     .description {
         font-size: 20px;
