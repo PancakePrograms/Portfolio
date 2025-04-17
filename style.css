@@ -5,6 +5,7 @@ body {
     background-image: radial-gradient(rgb(12, 12, 68), rgb(22, 22, 22));
     background-repeat: no-repeat;
     background-size: 100%;
+    overflow: hidden;
 }
 body::-webkit-scrollbar {
     display: none;
@@ -64,7 +65,7 @@ body::-webkit-scrollbar {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: -100vw;
     background-color: rgb(26, 26, 26);
@@ -199,5 +200,8 @@ body::-webkit-scrollbar {
         margin-left: 10vw;
         margin-right: 10vw;
         font-size: 5vw;
+    }
+    body {
+        overflow: hidden;
     }
 }
