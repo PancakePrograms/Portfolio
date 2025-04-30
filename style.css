@@ -181,6 +181,7 @@ body::-webkit-scrollbar {
 .html span, .css span, .JS span {
     margin-left: 5vw;
     margin-right: 5vw;
+    font-size: 3vw;
 }
 .language {
     font-size: 24px;
