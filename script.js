@@ -30,6 +30,24 @@ homeTab.addEventListener('click', () => {
     certTab.style.color = 'white'
 })
 
+const burgerHome = document.querySelector('.burgerHome')
+const burgerCert = document.querySelector('.burgerCert')
+
+burgerHome.addEventListener('click', () => {
+    intro.style.display = 'block';
+    Certifications.style.display = 'none';
+    homeTab.style.color = 'rgb(145, 202, 250)';
+    certTab.style.color = 'white'
+    burgerMenu.style.right = '-100vw';
+})
+burgerCert.addEventListener('click', () => {
+    intro.style.display = 'none';
+        Certifications.style.display = 'flex';
+        certTab.style.color = 'rgb(145, 202, 250)'
+        homeTab.style.color = 'white'
+        burgerMenu.style.right = '-100vw';
+})
+
 const html = document.querySelector('.html');
 const htmlCert = document.querySelector('.htmlCert')
 
@@ -65,9 +83,42 @@ js.addEventListener('mouseover', () => {
     jsCert.style.visibility = 'visible';
     jsCert.style.width = '80vw';
     js.style.color = 'rgb(145, 202, 250)';
-})
+});
 js.addEventListener('mouseout', () => {
     jsCert.style.visibility = 'hidden';
     jsCert.style.width = '0'
     js.style.color = 'white';
+});
+
+const contact = document.querySelector('.contact');
+contactStatus = 'unclicked';
+
+const defaultCard = document.createElement('span')
+defaultCard.innerHTML = 'Contact Me'
+contact.appendChild(defaultCard)
+const card = document.createElement('div')
+
+
+
+contact.addEventListener('click', () => {
+    if (contactStatus === 'unclicked') {
+        contact.removeChild(defaultCard)
+    
+    card.innerHTML = `<span>Charlie Kopenhaver</span> <span>pancakeprograms@gmail.com</span> <span>(717)406-7712</span>`
+    contact.appendChild(card)
+    contact.style.width = '250px'
+    contact.style.height = '150px'
+    card.classList.add('card')
+    contactStatus = 'clicked'
+    console.log('opened')
+    return;
+    } 
+    if (contactStatus === 'clicked'){
+        console.log('remove child')
+        contact.removeChild(card)
+        contact.appendChild(defaultCard)
+        contact.style.width = '120px'
+        contact.style.height = '30px'
+        contactStatus = 'unclicked'
+    }
 })

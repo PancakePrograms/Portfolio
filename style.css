@@ -6,6 +6,7 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
 }
 body::-webkit-scrollbar {
     display: none;
@@ -123,7 +124,7 @@ body::-webkit-scrollbar {
     font-size: 3vw;
 }
 
-.intro button {
+.contact {
     display: block;
     margin-top: 20px;
     position: relative;
@@ -134,7 +135,15 @@ body::-webkit-scrollbar {
     height: 30px;
     width: 120px;
     border-image: linear-gradient(to right, rgb(71, 71, 214), rgb(101, 130, 250)) 1;
-    transition: .2s;
+    transition: all .2s ease-in-out;
+    overflow: hidden;
+}
+.card {
+    display: flex; 
+    flex-direction: column;
+}
+.card span {
+    padding: 10px;
 }
 .intro button:hover {
     border-image: linear-gradient(to right, rgb(130, 130, 239), rgb(103, 197, 247)) 1;
@@ -187,7 +196,7 @@ body::-webkit-scrollbar {
         font-size: 80px;
     }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 450px) {
     .intro h1 {
         font-size: 12vw;
     }
