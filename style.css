@@ -200,11 +200,6 @@ body::-webkit-scrollbar {
         font-size: 26px;
     }
 }
-@media screen and (min-width: 400px) {
-    .html span, .css span, .JS span {
-        font-size: 3vw;
-    }
-}
 @media screen and (max-width: 450px) {
     .intro h1 {
         font-size: 12vw;
@@ -225,5 +220,6 @@ body::-webkit-scrollbar {
     .html span, .css span, .JS span {
         margin-left: 2vw;
         margin-right: 2vw;
+        font-size: 3vw;
     }
 }
